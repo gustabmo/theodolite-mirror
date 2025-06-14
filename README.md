@@ -8,6 +8,12 @@ by guexel@gmail.com Gustavo Exel
 
 Should be run on jscad then exported to a 3d printable format such as .stl. You'll need a 1"=25.4mm round mirror, which you can find on temu.com
 
-Made for https://github.com/jscad/. Should work on openjscad.xyz and jscad.app. Doesn't work on neorama.de/openjscad.org which apparently uses an old version of JSCad
+Made for https://github.com/jscad/. Should work on openjscad.xyz and jscad.app. Doesn't work on neorama.de/openjscad.org which apparently uses an old version of JSCad.
+
+How to use it: 
+- https://openjscad.xyz
+- click the pencil on the top right
+- copy the contents of theodolite-mirror.js from this repository and paste it into the edit box that opens up on the web site
+- click Shift-Enter to process it
 
 ![alt text](theodolite-mirror.png)
