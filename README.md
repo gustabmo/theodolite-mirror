@@ -13,3 +13,5 @@ you'll need a 1"=25.4mm round mirror, which you can find on temu.com
 made for https://github.com/jscad/;
 should work on openjscad.xyz and jscad.app;
 doesn't work on neorama.de/openjscad.org which apparently uses an old version of JSCad
+
+![alt text](theodolite-mirror.png)
