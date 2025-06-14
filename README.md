@@ -1,17 +1,13 @@
-# theodolite-mirror
-Wild T2 theodolite mirror support
+# Wild T2 theodolite mirror holder
 
 by guexel@gmail.com Gustavo Exel
 
 2025-06-14 first version
 
-mirror holder for Wild T2 theodolites;
-3d model suitable for a 3d printer;
-should be run on jscad then exported to a 3d printable format such as .stl;
-you'll need a 1"=25.4mm round mirror, which you can find on temu.com
+3D printable model of the mirror holder for old Wild T2 theodolites, which are still used by Waldrf-Steiner schools on their surveying classes. It's an easy to loose and hard to find replacement part
 
-made for https://github.com/jscad/;
-should work on openjscad.xyz and jscad.app;
-doesn't work on neorama.de/openjscad.org which apparently uses an old version of JSCad
+Should be run on jscad then exported to a 3d printable format such as .stl. You'll need a 1"=25.4mm round mirror, which you can find on temu.com
+
+Made for https://github.com/jscad/. Should work on openjscad.xyz and jscad.app. Doesn't work on neorama.de/openjscad.org which apparently uses an old version of JSCad
 
 ![alt text](theodolite-mirror.png)
