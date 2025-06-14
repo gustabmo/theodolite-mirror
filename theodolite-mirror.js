@@ -40,20 +40,24 @@ let widMirror = 1.5;
 let lenHinge = radClam*2*0.6;
 let radHinge = 3+slack/2;
 let inwardHinge = 1.6;
-let radHole = 0.5;
+let radHole = 1.75/2; // to use the printer's filament as the axle
 let partsHinge = 12;
 
 
 function hingeHole(center,evenOrOdd) {
-    let radDiagonal = Math.min ( radHole * 1.3, radHole + 0.5 );
-	let heightDiagonal = radHole * 1.5;
-	let ret = cylinder({height:lenHinge,radius:radHole});
 	let lenPart = lenHinge/partsHinge;
 	let centerPart = [0,0,-lenHinge/2+lenPart/2];
+
+	// diagonal cone to ease fitting the axle in
+	let heightDiagonal = Math.min ( radHole * 2, lenPart/4 ); 
+	let radDiagonal = Math.min ( radHole*1.5, radHole+heightDiagonal*0.8 );
+
+	let ret = cylinder({height:lenHinge,radius:radHole}); // starts with the axle hole
 	for ( let i = 0; i < partsHinge; i++) {
 		if ((!evenOrOdd) == ((i%2)!=0)) {
 			ret = union ( ret,
-				cylinderElliptic ({
+				// diagonal cone at each end to ease fitting the axle in
+				cylinderElliptic ({ 
 					height:heightDiagonal,
 					startRadius:[radDiagonal,radDiagonal],
 					endRadius:[radHole,radHole],
