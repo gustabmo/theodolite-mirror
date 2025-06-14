@@ -14,6 +14,7 @@ How to use it:
 - https://openjscad.xyz
 - click the pencil on the top right
 - copy the contents of theodolite-mirror.js from this repository and paste it into the edit box that opens up on the web site
-- click Shift-Enter to process it
+- Shift-Enter to process it
+- click the Export button to generate the 3d printable format suitable for your printer
 
 ![alt text](theodolite-mirror.png)
