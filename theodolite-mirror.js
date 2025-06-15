@@ -18,6 +18,7 @@ const { intersect, subtract, union } = jscad.booleans
 const { colorize } = jscad.colors
 const { cube, sphere, cylinder, cuboid, cylinderElliptic } = jscad.primitives
 const { rotate, rotateX, translate } = jscad.transforms
+const { measureArea, measureBoundingBox, measureVolume } = jscad.measurements
 
 
 let segments = 80;
@@ -40,7 +41,7 @@ let widMirror = 1.5;
 let lenHinge = radClam*2*0.6;
 let radHinge = 3+slack/2;
 let inwardHinge = 1.6;
-let radHole = 1.81/2; // best fit to use the printer's 1.75mm filament as the axle
+let radHole = 1.95/2; // best fit to use the printer's 1.75mm filament as the axle
 let partsHinge = 12;
 
 
@@ -135,7 +136,7 @@ function clamWithAttachment (xis) {
 		)
 	];
 
-	return subtract (
+	let clamA = subtract (
 		union (
 			subtract(
 				cylinder ({ // clam
@@ -195,6 +196,15 @@ function clamWithAttachment (xis) {
 			})
 		)
 	);
+
+	// it's best that the flat surface not be disturbed by the slicer supports, so face up
+	clamA = rotateX ( Math.PI, clamA );
+
+	// puts it at 0 height
+	let bounds = measureBoundingBox ( clamA );
+	clamA = translate ( [0,0,-bounds[0][2]], clamA );
+
+	return clamA;
 } // clamWithAttachment()
 
 
@@ -232,7 +242,7 @@ function clamWithMirror () {
 function main() {
 	return [
 		clamWithMirror(),
-		clamWithAttachment(radClam*2+radHinge*2)
+		clamWithAttachment(radClam*2+radHinge-inwardHinge+2)
 	];
 }
 
