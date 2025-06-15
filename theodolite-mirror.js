@@ -35,12 +35,12 @@ let radAttachmentCylinder = 5;
 let heightNotch = 1;
 let beforeNotch = 1;
 let depthNotch = 0.2;
-let radMirror = 25.4/2;
+let radMirror = 25.45/2; // for a 1"=25.4mm round mirror, available on temu.com 
 let widMirror = 1.5;
 let lenHinge = radClam*2*0.6;
 let radHinge = 3+slack/2;
 let inwardHinge = 1.6;
-let radHole = 1.75/2; // to use the printer's filament as the axle
+let radHole = 1.81/2; // best fit to use the printer's 1.75mm filament as the axle
 let partsHinge = 12;
 
 
